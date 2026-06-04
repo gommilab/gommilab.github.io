@@ -53,6 +53,15 @@
     letter-spacing:-0.02em; }
   .section-head p { font-size:18px; color:var(--mut); margin:0; }
 
+  /* 대표 작품 (유형별 최신 1개) — 연한 배경으로 구분 */
+  .featured { background:var(--tile); max-width:none; padding-left:0; padding-right:0; }
+  .featured > * { max-width:1024px; margin-left:auto; margin-right:auto; padding-left:22px; padding-right:22px; }
+  .card.feat { background:#fff; position:relative; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .badge { position:absolute; top:12px; left:12px; z-index:2; font-size:12px; font-weight:600;
+    padding:5px 12px; border-radius:980px; background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px); color:var(--ink); box-shadow:0 1px 4px rgba(0,0,0,.12); }
+  .badge:hover { color:var(--acc); }
+
   /* 카드 그리드 */
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
   .card { background:var(--tile); border-radius:20px; overflow:hidden;
@@ -88,13 +97,13 @@
 <body>
 <nav class="nav"><div class="nav-inner">
   <span class="brand">고미의 작업실</span>
-  <div class="links"><a href="#sec-code">웹사이트 · 앱</a><a href="#sec-image">웹툰 · 이미지</a><a href="#sec-doc">소설 · 글</a><a href="#sec-media">작곡 · 음악 · 영상</a></div>
+  <div class="links"><a href="#featured">대표 작품</a><a href="#sec-code">웹사이트 · 앱</a><a href="#sec-image">웹툰 · 이미지</a><a href="#sec-doc">소설 · 글</a><a href="#sec-media">작곡 · 음악 · 영상</a></div>
 </div></nav>
 
 <header class="hero">
   <h1>고미의 작업실</h1>
   <p>내가 만든 모든 것을, 한곳에서.</p>
-  <span class="count">총 4개의 작업</span>
+  <span class="count">총 9개의 작업</span>
   <div class="searchbar">
     <input id="search" type="search" placeholder="제목, 태그, 도구로 검색">
   </div>
@@ -103,20 +112,123 @@
 <main>
   
   
+      <section id="featured" class="section featured">
+        <div class="section-head">
+          <h2>대표 작품</h2>
+          <p>분야별 가장 최근 작업이에요. 카드를 누르면 해당 분야 전체를 볼 수 있어요.</p>
+        </div>
+        <div class="grid">
+        <article class="card feat">
+          <a class="badge" href="#sec-code">웹사이트 · 앱</a>
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>Living Index — 서울 자치구 정주여건 비교</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">서울 25개 자치구의 주거비·대기질·의료·도보 접근성을 비교하는 공공데이터 서비스</p>
+            <a class="open" href="#sec-code">웹사이트 · 앱 전체 보기 ›</a>
+          </div>
+        </article>
+        <article class="card feat">
+          <a class="badge" href="#sec-image">웹툰 · 이미지</a>
+          <div class="thumb"><img loading="lazy" src="assets/2026-06-05-예시-하루의-끝.svg" alt="[예시] 하루의 끝"></div>
+          <div class="body">
+            <h3>[예시] 하루의 끝</h3>
+            <p class="meta">AI 일러스트 · 2026-06-05</p>
+            <p class="desc">하루를 마무리하는 짧은 웹툰 1화</p>
+            <a class="open" href="#sec-image">웹툰 · 이미지 전체 보기 ›</a>
+          </div>
+        </article>
+        <article class="card feat">
+          <a class="badge" href="#sec-doc">소설 · 글</a>
+          <div class="thumb"><pre class="preview"># 별빛 정거장 — 1장
+
+마지막 열차가 떠난 정거장에는 별빛만 남았다.
+세린은 식어버린 커피를 손에 쥔 채, 오지 않을 사람을 기다렸다.
+&quot;늦더라도 괜찮아.&quot; 그녀는 혼잣말했다. 시간은 천천히, 그러나 분명히 흘렀다.
+</pre></div>
+          <div class="body">
+            <h3>[예시] 별빛 정거장</h3>
+            <p class="meta">Claude · 2026-06-05</p>
+            <p class="desc">별빛 정거장에서 기다리는 사람의 이야기</p>
+            <a class="open" href="#sec-doc">소설 · 글 전체 보기 ›</a>
+          </div>
+        </article>
+        <article class="card feat">
+          <a class="badge" href="#sec-media">작곡 · 음악 · 영상</a>
+          <div class="thumb"><div class="ph">♪</div><audio controls preload="none" src="assets/2026-06-05-예시-저녁노을-테마.wav"></audio></div>
+          <div class="body">
+            <h3>[예시] 저녁노을 테마</h3>
+            <p class="meta">AI 작곡 · 2026-06-05</p>
+            <p class="desc">저녁 무렵을 그린 잔잔한 화음</p>
+            <a class="open" href="#sec-media">작곡 · 음악 · 영상 전체 보기 ›</a>
+          </div>
+        </article></div>
+      </section>
+  
       <section id="sec-code" class="section">
         <div class="section-head">
           <h2>웹사이트 · 앱</h2>
           <p>직접 만든 웹사이트와 앱</p>
         </div>
         <div class="grid">
-        <article class="card" data-search="[예시] 나의 포트폴리오 사이트 직접 만든 개인 포트폴리오 웹사이트 ai 코딩 웹사이트 포트폴리오">
+        <article class="card" data-search="시드니 여행계획서 7박 8일 시드니 가족여행 모바일 일정 사이트 ai 코딩 웹사이트 여행 일정">
           <div class="thumb"><div class="ph">❯</div></div>
           <div class="body">
-            <h3>[예시] 나의 포트폴리오 사이트</h3>
+            <h3>시드니 여행계획서</h3>
             <p class="meta">AI 코딩 · 2026-06-05</p>
-            <p class="desc">직접 만든 개인 포트폴리오 웹사이트</p>
-            <div class="tags"><span class="tag">웹사이트</span><span class="tag">포트폴리오</span></div>
-            <a class="open" href="https://example.com/my-site" target="_blank" rel="noopener">자세히 보기 ›</a>
+            <p class="desc">7박 8일 시드니 가족여행 모바일 일정 사이트</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">여행</span><span class="tag">일정</span></div>
+            <a class="open" href="https://gommilab.github.io/sydney-trip/" target="_blank" rel="noopener">자세히 보기 ›</a>
+          </div>
+        </article>
+        <article class="card" data-search="m.ax brief 제조 ax·vertical ai 전략 브리프 (비밀번호 보호) ai 코딩 웹사이트 브리핑 제조ax">
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>M.AX Brief</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">제조 AX·Vertical AI 전략 브리프 (비밀번호 보호)</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">브리핑</span><span class="tag">제조AX</span></div>
+            <a class="open" href="https://gommilab.github.io/m-ax-brief/" target="_blank" rel="noopener">자세히 보기 ›</a>
+          </div>
+        </article>
+        <article class="card" data-search="ai for science 국가별 ai for science 전략 비교 서비스 ai 코딩 웹사이트 정책 ai전략">
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>AI for Science</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">국가별 AI for Science 전략 비교 서비스</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">정책</span><span class="tag">AI전략</span></div>
+            <a class="open" href="https://gommilab.github.io/ai-for-science/" target="_blank" rel="noopener">자세히 보기 ›</a>
+          </div>
+        </article>
+        <article class="card" data-search="ai 비서 미룸을 관리해주는 ai 개인비서 앱(pwa) ai 코딩 웹사이트 앱 생산성">
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>AI 비서</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">미룸을 관리해주는 AI 개인비서 앱(PWA)</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">앱</span><span class="tag">생산성</span></div>
+            <a class="open" href="https://gommilab.github.io/mysecretary/" target="_blank" rel="noopener">자세히 보기 ›</a>
+          </div>
+        </article>
+        <article class="card" data-search="요즘 어때? 하루 통계를 한눈에 보는 데일리 캘린더 ai 코딩 웹사이트 캘린더 통계">
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>요즘 어때?</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">하루 통계를 한눈에 보는 데일리 캘린더</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">캘린더</span><span class="tag">통계</span></div>
+            <a class="open" href="https://gommilab.github.io/daily-stats-calendar/" target="_blank" rel="noopener">자세히 보기 ›</a>
+          </div>
+        </article>
+        <article class="card" data-search="living index — 서울 자치구 정주여건 비교 서울 25개 자치구의 주거비·대기질·의료·도보 접근성을 비교하는 공공데이터 서비스 ai 코딩 웹사이트 공공데이터 서울 정주여건">
+          <div class="thumb"><div class="ph">❯</div></div>
+          <div class="body">
+            <h3>Living Index — 서울 자치구 정주여건 비교</h3>
+            <p class="meta">AI 코딩 · 2026-06-05</p>
+            <p class="desc">서울 25개 자치구의 주거비·대기질·의료·도보 접근성을 비교하는 공공데이터 서비스</p>
+            <div class="tags"><span class="tag">웹사이트</span><span class="tag">공공데이터</span><span class="tag">서울</span><span class="tag">정주여건</span></div>
+            <a class="open" href="https://living-index-seoul.vercel.app" target="_blank" rel="noopener">자세히 보기 ›</a>
           </div>
         </article></div>
       </section>
@@ -186,10 +298,14 @@
 <script>
   const search = document.getElementById('search');
   if (search) {
-    const cards = Array.from(document.querySelectorAll('.card'));
-    const sections = Array.from(document.querySelectorAll('.section'));
+    // 대표 작품 카드는 검색 대상에서 제외(중복 표시). 종류별 목록 카드만 필터.
+    const cards = Array.from(document.querySelectorAll('.card[data-search]'));
+    const sections = Array.from(document.querySelectorAll('.section:not(.featured)'));
+    const featured = document.getElementById('featured');
     search.addEventListener('input', () => {
       const q = search.value.trim().toLowerCase();
+      // 검색 중에는 대표 작품 섹션을 숨겨 결과에 집중
+      if (featured) featured.classList.toggle('hidden', !!q);
       cards.forEach(c => {
         c.classList.toggle('hidden', !!q && !c.dataset.search.includes(q));
       });
